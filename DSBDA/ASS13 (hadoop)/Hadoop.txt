@@ -1,0 +1,81 @@
+1. PATH of the prgram
+home -> hadoop-3.3.5 -> share -> hadoop -> map reduce -> word count program
+
+
+2. now open the terminal
+(you should be in the hadoop system)
+
+
+All the below steps on the terminal
+
+a) jps (java process to ensure the cluster is start or not)
+
+b) start-dfs.sh  (datanode, namenode, secondary namenode)
+
+c) start-yarn.sh  (resource manager, node manager) (used for prepocessing)
+
+d) jps   (check all 5 are working)
+
+e) gedit (create a text file in the HOME DIRECTORY) (COPY THAT IN HADOOP)
+
+f) hdfs dfs -mkdir /batchk21    (now we have to create directory) (move dfs file to hdfs)
+
+h) hdfs dfs -ls /   (shows whether the directory is created or not)
+
+i) hdfs dfs -ls /batchk21
+
+j) hdfs dfs -put /home/hadoop/abhi.txt /batchk21
+
+i) yarn jar /home/hadoop/hadoop-3.3.5/share/hadoop/mapreduce/hadoop-mapreduce-example-3.3.5.jar wordcount /batchk21 /outputbatchk21
+
+k) hdfs dfs -cat /outputbatchk21/part-r-00000
+
+
+stoping the process
+
+l) stop-yarn.sh
+
+m) stop-dfs.sh
+
+n) jps
+
+
+
+
+
+
+
+
+
+
+HADOOP THEORY
+
+   Q) Which configuration files are required for setting the hadoop environment
+Ans:  (mapred-site.xml, core-site.xml, hdfs-site.xml )
+
+
+  Q) What are the steps involved in setting up a Hadoop cluster ?
+Ans: 
+
+Step 1: Click here to download the Java 8 Package. Save this file in your home directory.
+Step 2: Extract the Java Tar File.
+Step 3: Download the Hadoop 2.7.3 Package.
+Step 4: Extract the Hadoop tar File.
+Step 5: Add the Hadoop and Java paths in the bash file (.bashrc).
+Step 6: Edit the Hadoop Configuration files.
+Step 7: Open core-site.xml and edit the property mentioned below inside configuration tag
+Step 8: Edit hdfs-site.xml and edit the property mentioned below inside configuration tag
+Step 9: Edit the mapred-site.xml file and edit the property mentioned below inside configuration tag
+Step 10: Edit yarn-site.xml and edit the property mentioned below inside configuration tag
+Step 11: Edit hadoop-env.sh and add the Java Path
+Step 12: Go to Hadoop home directory and format the NameNode.
+Step 13: Once the NameNode is formatted, go to hadoop-2.7.3/sbin directory and start all the daemons.
+Step 14: To check that all the Hadoop services are up and running, run the below command.
+
+
+
+
+  Q)  Draw a hadoop architecture
+Ans:  
+
+ 

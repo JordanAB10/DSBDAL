@@ -1,0 +1,31 @@
+spark-shell
+
+scala> var lineRDD = sc.textFile("xyz.txt")
+scala> var wordRDD = lineRDD.flatMap(_.split(" "))
+scala> var wordkvRDD = wordRDD.map((_, 1))
+scala> var wordCounts = wordkvRDD.reduceByKey(_+_)
+scala> wordCounts.saveAsTextFile("myopt3")
+scala> wordCounts.foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configuration for scala
+
+1. download tar file of spark and unzip it.
+2. make a directory opt/spark
+3. move that file in that directory and unzip it.
+4. set the path for scala and java
+5. the  run spark shell from cmd line
+ 
